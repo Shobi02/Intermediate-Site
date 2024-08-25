@@ -4,7 +4,7 @@ import requests
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = os.getenv('FLASK_SECRET_KEY', os.urandom(24)) 
 # Number of records per page
 RECORDS_PER_PAGE = 100
 

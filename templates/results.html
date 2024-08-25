@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Table Data</title>
+    <style>
+        body {
+            background-color: #b5b5f7; 
+            color: #ffffff; 
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #2a2a72; 
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2a2a72; 
+            color: #ffffff; 
+        }
+        tr:nth-child(even) {
+            background-color: #3a3a88; 
+        }
+        tr:nth-child(odd) {
+            background-color: #2a2a72; /
+        }
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .pagination a {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #ffffff; 
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2a2a72;
+            border-radius: 5px;
+        }
+        .pagination a.disabled {
+            color: #666666; 
+            pointer-events: none;
+            background-color: #3a3a88; 
+            border-color: #666666;
+        }
+        .pagination a.active {
+            background-color: #0d0d26; 
+            color: white;
+            border: 1px solid #0d0d26;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Table Data</h1>
+    {{ table|safe }}
+    
+    <div class="pagination">
+        {% if prev_page %}
+            <a href="{{ url_for('index', base_url=base_url, partition=partition, username=username, password=password, page=prev_page) }}">Previous</a>
+        {% else %}
+            <a class="disabled">Previous</a>
+        {% endif %}
+        
+        {% if next_page %}
+            <a href="{{ url_for('index', base_url=base_url, partition=partition, username=username, password=password, page=next_page) }}">Next</a>
+        {% else %}
+            <a class="disabled">Next</a>
+        {% endif %}
+    </div>
+
+    <br>
+    <a href="{{ url_for('logout') }}">Log Out</a>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Partition Details</title>
+    <style>
+        body {
+            background-color: #b5b5f7; 
+            color: #ffffff; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #2a2a72;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ffffff; 
+            border-radius: 5px;
+            background-color: #3a3a88; 
+            color: #ffffff;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #1a1a40;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #4c4cb2; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Enter Partition Details</h1>
+        <form method="post">
+            <label for="base_url">Base URL:</label><br>
+            <input type="text" id="base_url" name="base_url" required><br><br>
+            
+            <label for="partition">Partition Name:</label><br>
+            <input type="text" id="partition" name="partition" required><br><br>
+            
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
